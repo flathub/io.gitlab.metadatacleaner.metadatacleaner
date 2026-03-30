@@ -40,8 +40,8 @@ modules:
         sources:
           - type: git
             url: https://salsa.debian.org/debian/media-types.git
-            tag: debian/14.0.0
-            commit: 98d3fa0d18efa9d9b707a89d3fd2ec5dbcc83eff
+            tag: 13.0.0
+            commit: b5949cc84e966fbae4ca7de2f678aa049dd727ee
             x-checker-data:
               type: git
               tag-pattern: ^([\d\.]+)$
