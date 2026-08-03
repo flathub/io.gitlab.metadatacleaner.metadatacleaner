@@ -58,8 +58,7 @@ modules:
         sources:
           - type: git
             url: https://github.com/jvoisin/mat2.git
-            tag: 0.14.0
-            commit: b50a49f50f64af3d33ebd99062d114bf5f776055
+            commit: 360e15a620668d8711972b0d69eeca027f211175
             x-checker-data:
               type: git
               tag-pattern: ^([\d\.]+)$
