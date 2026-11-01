@@ -28,7 +28,7 @@ modules:
       - type: git
         url: https://gitlab.com/metadatacleaner/metadatacleaner.git
         tag: v4.0.1
-        commit: 4f7b9122b1913f22c451c6710ed950942af196b9
+        commit: bf8bf151027c592af98157733a1175855a5d1395
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
