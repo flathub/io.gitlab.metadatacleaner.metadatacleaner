@@ -27,8 +27,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/metadatacleaner/metadatacleaner.git
-        tag: v4.0.0
-        commit: 30848b063770ac8d57d47915dc192649434b4141
+        tag: v4.0.1
+        commit: bf8bf151027c592af98157733a1175855a5d1395
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -50,18 +50,16 @@ modules:
       - name: python3-libmat2
         buildsystem: simple
         build-commands:
-          - python3 setup.py build
-          - python3 setup.py install --optimize=1 --single-version-externally-managed
-            --prefix=$FLATPAK_DEST --root=/
-        ensure-writable:
-          - /lib/python3*/site-packages/easy-install.pth
+          - pip3 install --verbose --exists-action=i --no-index --prefix=${FLATPAK_DEST}
+            --no-build-isolation --no-deps .
         sources:
           - type: git
             url: https://github.com/jvoisin/mat2.git
-            commit: 360e15a620668d8711972b0d69eeca027f211175
+            commit: 54ba36955d916440b43be5c5ee2a87646b3ca493
             x-checker-data:
               type: git
               tag-pattern: ^([\d\.]+)$
+            tag: 0.15.0
         modules:
           - name: exiftool
             buildsystem: simple
@@ -73,8 +71,8 @@ modules:
             sources:
               - type: git
                 url: https://github.com/exiftool/exiftool.git
-                tag: '13.58'
-                commit: 38bdbace3037a89d2c332664fc60bddad118958a
+                tag: '13.60'
+                commit: 980409314fddbd83d9092b5c160fafab7f67fd52
                 x-checker-data:
                   type: git
                   tag-pattern: ^(\d+\.\d+[02468])$
@@ -123,8 +121,8 @@ modules:
                 sources:
                   - type: git
                     url: https://github.com/Perl/perl5.git
-                    tag: v5.42.2
-                    commit: b62845c7186b0b6a8e4e83419e6b5ef64ceef3ed
+                    tag: v5.44.0
+                    commit: e634cc838fb1785dfafb5d13b52807ea16b5c52c
                     disable-fsckobjects: true
                     x-checker-data:
                       type: git
@@ -147,8 +145,8 @@ modules:
             sources:
               - type: git
                 url: https://gitlab.freedesktop.org/poppler/poppler.git
-                tag: poppler-26.05.0
-                commit: b0091f08803ffe7784e365db45abd003159bf45d
+                tag: poppler-26.10.0
+                commit: 2703be11769c1f86f4d0dc3b276ec94bba5ac6d3
                 x-checker-data:
                   type: git
                   tag-pattern: ^poppler-([\d\.]+)$
@@ -182,8 +180,8 @@ modules:
             sources:
               - type: git
                 url: https://github.com/quodlibet/mutagen.git
-                tag: release-1.47.0
-                commit: e38a475b4e00e248e04c50901d75b526464550d3
+                tag: release-1.48.1
+                commit: 452190d42ab2092577c77342d49157f8768d796f
                 x-checker-data:
                   type: git
                   tag-pattern: ^release-([\d\.]+)$
